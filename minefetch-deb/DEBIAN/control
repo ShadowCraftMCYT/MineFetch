@@ -1,0 +1,7 @@
+Package: minefetch
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: YOUR_NAME <your_email@example.com>
+Description: MineFetch - UltraNode VPS system info tool (Neofetch style)
